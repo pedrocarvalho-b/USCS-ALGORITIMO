@@ -1,0 +1,56 @@
+//Questao 1
+#include <stdio.h>
+
+int main(){
+  int pontos[3][5];
+  int i, j, soma, bsoma, ganhador;
+  printf("Coloque os pontos em ordem do primeiro ao terceiro jogador");
+  for(i=0;i<3;i++){
+    for(j=0;j<5;j++){
+    scanf("%d",&pontos[i][j]);
+    }
+  }
+  for(i=0;i<3;i++){
+    soma=0;
+    for(j=0;j<5;j++){ 
+      soma+=pontos[i][j];
+      }
+    printf("Jogador %d, Pontos %d\n", i+1, soma);
+    if(soma>bsoma){
+      bsoma=soma;
+      ganhador=i+1;
+    }
+  }
+  printf("Ganhador: Jogador %d", ganhador);
+  return 0;
+}
+
+//Questao 2
+
+#include <stdio.h>
+
+int main(){
+  int n, i, j;
+  printf("Coloque o tamanho da matriz quadrada");
+  scanf("%d",&n);
+  int numeros [n][n];
+  for(i=0;i<n;i++){ 
+    for(j=0;j<n;j++){
+    numeros[i][j]=0;
+    }
+  }
+  for(i=0;i<n;i++){ 
+    for(j=0;j<n;j++){
+    numeros[i][j]=j+1;
+    }
+  } 
+  for(i=0;i<n;i++){
+    numeros[i][i]=i+1
+  }
+  for(i=0;i<n;i++){ 
+    for(j=0;j<n;j++){
+      printf("%d\n",numeros[i][j]);
+    }
+  }
+  return 0;
+}
